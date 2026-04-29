@@ -1,0 +1,187 @@
+{
+  "base_url": "https://gym.sztu.edu.cn/",
+  "storage_state": "state/storage.json",
+  "headless": true,
+  "slow_mo_ms": 0,
+  "action_timeout_ms": 900,
+  "navigation_timeout_ms": 7000,
+  "edge_args": [
+    "--no-proxy-server",
+    "--disable-background-networking",
+    "--disable-extensions",
+    "--disable-sync",
+    "--no-first-run"
+  ],
+  "block_resource_types": [
+    "image",
+    "media",
+    "font"
+  ],
+  "screenshots_dir": "screenshots",
+  "login": {
+    "success_keywords": [
+      "场馆预约",
+      "我的",
+      "预约"
+    ],
+    "trigger_venue_keywords": [
+      "羽毛球"
+    ],
+    "entry_keywords": [
+      "登录",
+      "统一身份认证",
+      "账号登录"
+    ],
+    "username_selectors": [
+      "#j_username",
+      "input[name='username']",
+      "input[name='userName']",
+      "input[name='account']",
+      "input[name='loginName']",
+      "input[id='username']",
+      "input[id='userName']",
+      "input[type='text']"
+    ],
+    "password_selectors": [
+      "#j_password",
+      "input[name='password']",
+      "input[name='passwd']",
+      "input[id='password']",
+      "input[type='password']"
+    ],
+    "submit_selectors": [
+      "#loginButton",
+      "button[type='submit']",
+      "input[type='submit']",
+      ".login-btn",
+      "#login_submit"
+    ],
+    "submit_keywords": [
+      "登录",
+      "登 录",
+      "立即登录",
+      "确认"
+    ]
+  },
+  "booking": {
+    "date_offset_days": 1,
+    "sport_keywords": [
+      "羽毛球"
+    ],
+    "venue_keywords": [
+      "包场",
+      "羽毛球"
+    ],
+    "time_slots": [
+      "19:00",
+      "20:20"
+    ],
+    "court_keywords": [],
+    "max_attempts_per_slot": 4,
+    "between_action_ms": 80,
+    "after_submit_ms": 500,
+    "auto_select_first_available_court": true,
+    "available_court_min_y": 130,
+    "save_failure_screenshots": false,
+    "submit_keywords": [
+      "立即预约",
+      "预约",
+      "提交订单",
+      "确认预约",
+      "确认"
+    ],
+    "success_keywords": [
+      "预约成功",
+      "提交成功",
+      "支付成功",
+      "已预约"
+    ],
+    "selectors": {
+      "booking_entry": "",
+      "date": "",
+      "sport": "",
+      "venue": "",
+      "time_slot": "",
+      "submit": "",
+      "confirm": ""
+    }
+  },
+  "notify": {
+    "enabled": false,
+    "provider": "serverchan",
+    "serverchan_sendkey": "",
+    "wechat_webhook_url": "",
+    "mention_all": false,
+    "timeout_seconds": 8
+  },
+  "automation": {
+    "cancel_after_start_minutes": 61,
+    "booking_profiles": {
+      "badminton_18pm": {
+        "wait_until": "18:00:00",
+        "slots": [
+          "19:00",
+          "20:20"
+        ],
+        "venue_id": 3,
+        "block_type": 2,
+        "site_date_type": 2,
+        "max_polls": 320,
+        "poll_interval_ms": 25,
+        "preheat_requests": 6,
+        "slot_workers": 2,
+        "create_retries": 5,
+        "ntp_sync": true,
+        "multi_session_hold": true,
+        "booking_window_seconds": 180,
+        "session_workers": 1,
+        "peer_accounts": [],
+        "account_profile": "badminton",
+        "max_holds_per_slot": 1
+      },
+      "fitness_center_19pm": {
+        "wait_until": "19:00:00",
+        "slots": [
+          "19:00",
+          "20:20"
+        ],
+        "venue_id": 46,
+        "block_type": 1,
+        "site_date_type": 2,
+        "max_polls": 280,
+        "poll_interval_ms": 35,
+        "preheat_requests": 5,
+        "slot_workers": 2,
+        "create_retries": 5,
+        "ntp_sync": true
+      },
+      "gym_room_19pm": {
+        "wait_until": "19:00:00",
+        "slots": [
+          "19:00",
+          "20:20"
+        ],
+        "venue_id": 4,
+        "block_type": 1,
+        "site_date_type": 2,
+        "max_polls": 280,
+        "poll_interval_ms": 35,
+        "preheat_requests": 5,
+        "slot_workers": 2,
+        "create_retries": 5,
+        "ntp_sync": true
+      }
+    },
+    "badminton_account_profile": "badminton",
+    "cancel_account_profiles": [
+      "badminton"
+    ]
+  },
+  "accounts": {
+    "badminton": {
+      "username": "",
+      "password": "",
+      "storage_state": "state/storage_badminton.json"
+    }
+  }
+}
